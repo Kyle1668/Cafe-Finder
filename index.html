@@ -6,7 +6,8 @@
 
 	<!-- Stylesheets -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="source/index.css">
+    <link rel="stylesheet" href="source/view/index.css">
+    <link rel="stylesheet" href="assets/libs/hover.css">
 
     <title>Cafe Finder</title>
 </head>
@@ -20,15 +21,43 @@
 					<!-- <h5>Enter location to find cafes near you!</h5> -->
 				</div>
 				<div class="col-lg-6">
-					<h3>Enter Location</h3><br>
-					<input type="text" class="form-control locationInput" name="loc" value="">
+					<h3><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Enter Location</h3><br>
+					<input id="searchBar" type="text" class="form-control locationInput" name="loc" value="">
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- Javascript -->
+	<div class="place-container">
+        <!-- <div class="place container">
+            <div class="row">
+                <div class="col-lg-3 image">
+                    <img src="https://i.gyazo.com/3e9624b4da2d750661223ef5377a8927.png" alt="">
+                </div>
+                <div class="col-lg-5 summary">
+                    <h1>The Flying Goat Coffee</h1>
+                    <h3>324 Center St, Healdsburg, CA 95448</h3>
+                </div>
+                <div class="col-lg-4 reviews">
+                    <h2>Avg Rating: 4.6</h2>
+                    <h3>324 Center St, Healdsburg, CA 95448</h3>
+                </div>
+            </div>
+        </div> -->
+	</div>
+
+    <div class="load-more">
+        <div class="container">
+            <div class="col-lg-12">
+                <hr>
+                <h2 id="showMoreText">Show More Places</h2>
+            </div>
+        </div>
+    </div>
+
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_KZyErDtZ42CuFscO2l5YseWaV8MCHrQ&libraries=places"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="source/index.js" charset="utf-8"></script>
+	<script src="source/view/index.js" charset="utf-8"></script>
+
 </body>
 </html>
