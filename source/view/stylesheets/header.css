@@ -1,0 +1,26 @@
+.header {
+	height: 220px;
+	width: 100%;
+	color: #ddd;
+	background: #22313F;
+	background-repeat: no-repeat;
+   	background-size: cover;
+	padding-top: 30px;
+}
+
+.header .col-lg-6 {
+	padding-top: 10px;
+}
+
+.header .col-lg-6 h5 {
+	padding-top: 10px;
+}
+
+.header .col-lg-6 .glyphicon {
+	font-size: 18px;
+	padding-right: 10px;
+}
+
+.locationInput {
+	width: 30rem;
+}
