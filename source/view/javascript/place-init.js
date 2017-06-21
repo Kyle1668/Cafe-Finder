@@ -10,6 +10,10 @@ function initPlacePanel(placeObj) {
 	placeObj.types[0]= placeObj.types[0].charAt(0).toUpperCase() + placeObj.types[0].slice(1);
 	placeObj.opening_hours.open_now = placeObj.opening_hours.open_now.toString().charAt(0).toUpperCase() + placeObj.opening_hours.open_now.toString().slice(1);
 
+	if (!placeObj.rating) {
+		placeObj.rating = "N/A";
+	}
+
 	return `
 	<div class="place container" id="last">
 			<div class="row">
