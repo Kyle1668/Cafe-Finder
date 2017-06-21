@@ -1,13 +1,11 @@
-
-
 $(document).ready(function () {
 	var NUMPLACES = 0;
 	var MAXNUMPLACES = 5;
 
-	// Load more places
-	$("#searchBar").change(function () {
+	// Load places
+	$("#searchButton").click(function () {
 		while (NUMPLACES != MAXNUMPLACES) {
-			var newContainer = initPlacePanel(testPlace);
+			var newContainer = initPlacePanel(PLACES_ARRAY[NUMPLACES]);
 			$(".place-container").append(newContainer);
 			$("#last").hide().fadeIn("slow");
 			$("#last").removeAttr("id");
@@ -20,6 +18,12 @@ $(document).ready(function () {
 	$("#showMoreText").click(function() {
 		MAXNUMPLACES += 5
 		$(".load-more").css("opacity", "0");
-		$("#searchBar").trigger("change");
+		$("#searchButton").trigger("click");
+
+		if (MAXNUMPLACES == PLACES_ARRAY.length) {
+			$("#showMoreText").hide();
+		}
+
 	});
+
 });

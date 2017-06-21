@@ -21,33 +21,18 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<h1>Coffee Finder</h1>
-					<!-- <h5>Enter location to find cafes near you!</h5> -->
+					<h5>Enter location to find cafes near you!</h5>
 				</div>
 				<div class="col-lg-6">
 					<h3><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Enter Location</h3><br>
 					<input id="searchBar" type="text" class="form-control locationInput" name="loc" value="">
+                    <button id="searchButton" class="btn" type="button" name="button">Show Places</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="place-container">
-        <!-- <div class="place container">
-            <div class="row">
-                <div class="col-lg-3 image">
-                    <img src="https://i.gyazo.com/3e9624b4da2d750661223ef5377a8927.png" alt="">
-                </div>
-                <div class="col-lg-5 summary">
-                    <h1>The Flying Goat Coffee</h1>
-                    <h3>324 Center St, Healdsburg, CA 95448</h3>
-                </div>
-                <div class="col-lg-4 reviews">
-                    <h2>Avg Rating: 4.6</h2>
-                    <h3>324 Center St, Healdsburg, CA 95448</h3>
-                </div>
-            </div>
-        </div> -->
-	</div>
+	<div class="place-container"></div>
 
     <div class="load-more">
         <div class="container">
@@ -60,9 +45,9 @@
 
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_KZyErDtZ42CuFscO2l5YseWaV8MCHrQ&libraries=places"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="source/api/api.js" charset="utf-8"></script>
     <script src="source/view/javascript/place-init.js" charset="utf-8"></script>
 	<script src="source/view/javascript/view.js" charset="utf-8"></script>
-    <script src="source/api/api.js" charset="utf-8"></script>
 
 </body>
 </html>
