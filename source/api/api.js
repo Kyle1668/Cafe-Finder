@@ -5,7 +5,13 @@ $(document).ready(function () {
 
 	google.maps.event.addListener(placeSearch, 'place_changed', function() {
 		var place = placeSearch.getPlace();
-		var request = "https://" + "maps.googleapis.com/maps/api/place/textsearch/xml?query=Coffee+near+" + place.formatted_address + "&key=AIzaSyC_KZyErDtZ42CuFscO2l5YseWaV8MCHrQ";
+		var request = `https://" + "maps.googleapis.com/maps/api/place/textsearch/xml?query=Coffee+near+"
+							+ ${place.formatted_address} + "&key=AIzaSyC_KZyErDtZ42CuFscO2l5YseWaV8MCHrQ&sensor=f`;
+
+		$.getJSON(request, function () {
+			console.log("worked!");
+		});
+
 		console.log(place.formatted_address);
 		console.log(request);
 		console.log(place.result);
