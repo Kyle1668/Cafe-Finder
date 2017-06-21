@@ -5,7 +5,6 @@ $(document).ready(function () {
 	// Load places
 	$("#searchButton").click(function () {
 		while (NUMPLACES != MAXNUMPLACES) {
-			// var newContainer = initPlacePanel(PLACES_ARRAY[NUMPLACES]);
 			var newContainer = initPlacePanel(PLACES_ARRAY[NUMPLACES]);
 			$(".place-container").append(newContainer);
 			$("#last").hide().fadeIn("slow");
@@ -21,7 +20,7 @@ $(document).ready(function () {
 		$(".load-more").css("opacity", "0");
 		$("#searchButton").trigger("click");
 
-		if (MAXNUMPLACES == PLACES_ARRAY.length) {
+		if (MAXNUMPLACES >= PLACES_ARRAY.length) {
 			$("#showMoreText").hide();
 		}
 
