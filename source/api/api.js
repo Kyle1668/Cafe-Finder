@@ -13,6 +13,7 @@ $(document).ready(function() {
 			PLACES_ARRAY = data.results;
 		});
 
+		// $("#searchButton").trigger("click");
 	})
 
 });

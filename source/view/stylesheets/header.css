@@ -24,3 +24,14 @@
 .locationInput {
 	width: 30rem;
 }
+
+#searchButton {
+	color: #22313F;
+	background-color: #ddd;
+	margin-top: 15px;
+}
+
+#searchButton:hover {
+	color: #ddd;
+	background-color: gray;
+}
