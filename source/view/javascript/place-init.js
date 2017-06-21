@@ -6,12 +6,24 @@ var testPlace = {
 }
 
 function initPlacePanel(placeObj) {
+
 	// Capitalizing First Letters
 	placeObj.types[0]= placeObj.types[0].charAt(0).toUpperCase() + placeObj.types[0].slice(1);
 	placeObj.opening_hours.open_now = placeObj.opening_hours.open_now.toString().charAt(0).toUpperCase() + placeObj.opening_hours.open_now.toString().slice(1);
 
 	if (!placeObj.rating) {
 		placeObj.rating = "N/A";
+	}
+
+	if (placeObj.price_level) {
+		var price = "";
+		for (var i = 1; i <= placeObj.price_level; i++) {
+			price += "$";
+		}
+		placeObj.price_level = price;
+	}
+	else {
+		placeObj.price_level = "N/A";
 	}
 
 	return `
@@ -27,6 +39,7 @@ function initPlacePanel(placeObj) {
 				<div class="col-lg-4 reviews">
 					<h2>Avg Rating:  ${placeObj.rating}</h2>
 					<h3>Type: ${placeObj.types[0]}</h3>
+					<h3>Pricing: ${placeObj.price_level}</h3>
 					<h3>Open Now: ${placeObj.opening_hours.open_now}</h3>
 				</div>
 			</div>
