@@ -20,7 +20,7 @@ function makePanel(image, name, address, rating, type, price, isOpen) {
 					<h2>Avg Rating:  ${rating}</h2>
 					<h3>Type: ${type}</h3>
 					<h3>Pricing: ${price}</h3>
-					<h3>Open Now: ${isOpen}</h3>
+					<h3>${isOpen}</h3>
 				</div>
 			</div>
 		</div>
@@ -33,21 +33,24 @@ function initPlacePanel(placeObj) {
 	var keyParem = "&key=AIzaSyC_KZyErDtZ42CuFscO2l5YseWaV8MCHrQ";
 	var image = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + photo_reference + keyParem;
 
-	// Capitalizing First Letters
 	placeObj.types[0] = placeObj.types[0].charAt(0).toUpperCase() + placeObj.types[0].slice(1);
-	placeObj.opening_hours.open_now = placeObj.opening_hours.open_now.toString().charAt(0).toUpperCase() + placeObj.opening_hours.open_now.toString().slice(1);
 
 	if (!placeObj.rating) {
 		placeObj.rating = "N/A";
 	}
 
+	if (placeObj.opening_hours.open_now) {
+		placeObj.opening_hours.open_now = "Open Now"
+	} else {
+		placeObj.opening_hours.open_now = "Closed"
+	}
+
 	if (placeObj.price_level) {
-		for (var i = 1; i <= placeObj.price_level; i++) {
+		for (var i = 1; i <= placeObj.price_level + 1; i++) {
 			price += "$";
 		}
-	}
-	else {
-		placeObj.price_level = "N/A";
+	} else {
+		price = "N/A";
 	}
 
 	return makePanel(image, placeObj.name, placeObj.formatted_address, placeObj.rating, placeObj.types[0], price, placeObj.opening_hours.open_now);
