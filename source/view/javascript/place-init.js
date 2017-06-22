@@ -7,8 +7,12 @@ var testPlace = {
 
 function initPlacePanel(placeObj) {
 
+	var photo_reference = placeObj.photos[0].photo_reference;
+	var keyParem = "&key=AIzaSyC_KZyErDtZ42CuFscO2l5YseWaV8MCHrQ";
+	var image = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + photo_reference + keyParem;
+
 	// Capitalizing First Letters
-	placeObj.types[0]= placeObj.types[0].charAt(0).toUpperCase() + placeObj.types[0].slice(1);
+	placeObj.types[0] = placeObj.types[0].charAt(0).toUpperCase() + placeObj.types[0].slice(1);
 	placeObj.opening_hours.open_now = placeObj.opening_hours.open_now.toString().charAt(0).toUpperCase() + placeObj.opening_hours.open_now.toString().slice(1);
 
 	if (!placeObj.rating) {
@@ -30,7 +34,7 @@ function initPlacePanel(placeObj) {
 	<div class="place container" id="last">
 			<div class="row">
 				<div class="col-lg-3 image">
-					<img src="https://media-cdn.tripadvisor.com/media/photo-s/03/4b/c9/dd/flying-goat-coffee.jpg" alt="">
+					<img src=${image} alt="">
 				</div>
 				<div class="col-lg-5 summary">
 					<h1>${placeObj.name}</h1>
