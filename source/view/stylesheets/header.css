@@ -2,7 +2,7 @@
 	height: 220px;
 	width: 100%;
 	color: #ddd;
-	background: #22313F;
+	background: #446CB3;
 	background-repeat: no-repeat;
    	background-size: cover;
 	padding-top: 30px;
@@ -32,6 +32,5 @@
 }
 
 #searchButton:hover {
-	color: #ddd;
-	background-color: gray;
+	background-color: #ECF0F1;
 }

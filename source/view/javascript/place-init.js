@@ -14,7 +14,7 @@ function makePanel(image, name, address, rating, type, price, isOpen) {
 				</div>
 				<div class="col-lg-5 summary">
 					<h1>${name}</h1>
-					<h3>${address}</h3>
+					<h4>${address}</h4>
 				</div>
 				<div class="col-lg-4 reviews">
 					<h2>Avg Rating:  ${rating}</h2>
@@ -31,6 +31,10 @@ function initPlacePanel(placeObj) {
 	var price = "";
 	var photo_reference = placeObj.photos[0].photo_reference;
 	var keyParem = "&key=AIzaSyC_KZyErDtZ42CuFscO2l5YseWaV8MCHrQ";
+	var address = placeObj.formatted_address.split(",");
+	placeObj.formatted_address = address[0] + address[1] + address[2];
+	console.log(address);
+	console.log(placeObj.formatted_address);
 	var image = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + photo_reference + keyParem;
 
 	placeObj.types[0] = placeObj.types[0].charAt(0).toUpperCase() + placeObj.types[0].slice(1);

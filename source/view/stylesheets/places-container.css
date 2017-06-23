@@ -1,22 +1,26 @@
 .place-container {
 	padding-top: 30px;
 	padding-bottom: 50px;
+
 }
 
 .place {
 	margin-top: 30px;
 	height: 250px;
-	background-color: #cbcbcb;
-	border: 2px solid gray;
-	border-radius: 5px;
+	border-bottom: 2px solid #6C7A89;
+	border-radius: 2px;
+}
+
+.place h4 {
+	margin-top: 25px;
 }
 
 .place img {
 	height: 200px;
 	width: 250px;
 	margin: 20px;
-	border: 2px solid #22313F;
-	border-radius: 3px
+	border: 2px solid black;
+	border-radius: 2px
 }
 
 .summary {
