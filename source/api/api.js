@@ -13,6 +13,6 @@ $(document).ready(function() {
 			PLACES_ARRAY = data.results;
 		});
 
-	})
+	});
 
 });

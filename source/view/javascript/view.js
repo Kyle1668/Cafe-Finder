@@ -1,40 +1,49 @@
-function loadPlace(index) {
-	var newContainer = initPlacePanel(PLACES_ARRAY[index]);
+var NUMPLACES = 0;
+var MAXNUMPLACES = 5;
+
+function addPlace(newContainer) {
 	$(".place-container").append(newContainer);
 	$("#last").hide().fadeIn("slow");
 	$("#last").removeAttr("id");
 }
 
-function removePlaces() {
+function loadPlaces() {
+	while (NUMPLACES != MAXNUMPLACES) {
+		addPlace(initPlacePanel(PLACES_ARRAY[NUMPLACES]));
+		NUMPLACES++;
+	}
 	$(".load-more").css("opacity", "10");
-	$(".place").fadeOut("slow", function () {
+}
+
+function removePlaces() {
+	$(".load-more").css('opacity', '0');
+	$(".place").fadeOut("slow", function() {
 		$(this).remove();
 	});
+	NUMPLACES = 0;
+	MAXNUMPLACES = 5;
 }
 
 $(document).ready(function () {
-	var numPlaces = 0;
-	var maxNumPlaces = 5;
 
 	// Load places
 	$("#searchButton").click(function () {
-		if (numPlaces > 0) {
-			removePlaces();
-			numPlaces = 0;
-			maxNumPlaces = 5;
+		loadPlaces();
+		$(this).fadeOut("slow");
+	});
+
+	$("#searchBar").change(function() {
+		if (NUMPLACES > 0) {
+			$("#searchButton").fadeIn("fast");
 		}
-		while (numPlaces != maxNumPlaces) {
-			loadPlace(numPlaces)
-			numPlaces++;
-		}
-		$(".load-more").css("opacity", "10");
 	});
 
 	// Load 5 more places
 	$("#showMoreText").click(function() {
+		console.log("Clicked");
 		MAXNUMPLACES += 5
 		$(".load-more").css("opacity", "0");
-		$("#searchButton").trigger("click");
+		loadPlaces();
 
 		if (MAXNUMPLACES >= PLACES_ARRAY.length) {
 			$("#showMoreText").hide();
