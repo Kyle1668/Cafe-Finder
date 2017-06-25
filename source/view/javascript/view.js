@@ -1,15 +1,31 @@
+function loadPlace(index) {
+	var newContainer = initPlacePanel(PLACES_ARRAY[index]);
+	$(".place-container").append(newContainer);
+	$("#last").hide().fadeIn("slow");
+	$("#last").removeAttr("id");
+}
+
+function removePlaces() {
+	$(".load-more").css("opacity", "10");
+	$(".place").fadeOut("slow", function () {
+		$(this).remove();
+	});
+}
+
 $(document).ready(function () {
-	var NUMPLACES = 0;
-	var MAXNUMPLACES = 5;
+	var numPlaces = 0;
+	var maxNumPlaces = 5;
 
 	// Load places
 	$("#searchButton").click(function () {
-		while (NUMPLACES != MAXNUMPLACES) {
-			var newContainer = initPlacePanel(PLACES_ARRAY[NUMPLACES]);
-			$(".place-container").append(newContainer);
-			$("#last").hide().fadeIn("slow");
-			$("#last").removeAttr("id");
-			NUMPLACES++;
+		if (numPlaces > 0) {
+			removePlaces();
+			numPlaces = 0;
+			maxNumPlaces = 5;
+		}
+		while (numPlaces != maxNumPlaces) {
+			loadPlace(numPlaces)
+			numPlaces++;
 		}
 		$(".load-more").css("opacity", "10");
 	});

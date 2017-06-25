@@ -7,23 +7,25 @@ var testPlace = {
 
 function makePanel(image, name, address, rating, type, price, isOpen) {
 	return `
-	<div class="place container" id="last">
-			<div class="row">
-				<div class="col-lg-3 image">
-					<img src=${image} alt="">
-				</div>
-				<div class="col-lg-5 summary">
-					<h1>${name}</h1>
-					<h4>${address}</h4>
-				</div>
-				<div class="col-lg-4 reviews">
-					<h2>Avg Rating:  ${rating}</h2>
-					<h3>Type: ${type}</h3>
-					<h3>Pricing: ${price}</h3>
-					<h3>${isOpen}</h3>
-				</div>
-			</div>
-		</div>
+	<div class="place" id="last">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-lg-3 image">
+	                    <img src=${image} alt="">
+	                </div>
+	                <div class="col-lg-5 summary">
+	                    <h1>${name}</h1>
+	                    <h4>${address}</h4>
+	                </div>
+	                <div class="col-lg-4 reviews">
+	                    <h2>Avg Rating:  ${rating}</h2>
+	                    <h3>Type: ${type}</h3>
+	                    <h3>Pricing: ${price}</h3>
+	                    <h3>${isOpen}</h3>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
 	`
 }
 
