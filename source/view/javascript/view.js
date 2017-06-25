@@ -29,12 +29,14 @@ $(document).ready(function () {
 	// Load places
 	$("#searchButton").click(function () {
 		loadPlaces();
-		$(this).fadeOut("slow");
+		$(this).fadeOut("fast");
 	});
 
 	$("#searchBar").change(function() {
 		if (NUMPLACES > 0) {
 			$("#searchButton").fadeIn("fast");
+			$("#searchButton").animate({ opacity: 1 });
+			removePlaces();
 		}
 	});
 
