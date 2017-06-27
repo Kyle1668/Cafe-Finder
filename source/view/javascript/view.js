@@ -17,7 +17,7 @@ function loadPlaces() {
 
 function removePlaces() {
 	$(".load-more").css('opacity', '0');
-	$(".place").fadeOut("slow", function() {
+	$(".place").fadeOut("fast", function() {
 		$(this).remove();
 	});
 	NUMPLACES = 0;
@@ -28,6 +28,7 @@ $(document).ready(function () {
 
 	// Load places
 	$("#searchButton").click(function () {
+		removePlaces();
 		loadPlaces();
 		$(this).fadeOut("fast");
 	});
