@@ -1,7 +1,6 @@
 .place-container {
 	padding-top: 30px;
 	padding-bottom: 50px;
-
 }
 
 .place {
@@ -19,7 +18,7 @@
 	height: 200px;
 	width: 250px;
 	margin: 20px;
-	border: 2px solid black;
+	border: 1px solid black;
 	border-radius: 2px
 }
 
