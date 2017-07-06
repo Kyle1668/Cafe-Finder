@@ -1,7 +1,8 @@
 ## QuickCaff: Caffe Finder
 
 Web application that locates local coffee shops using the Google Places API.
-Tools: HTML, CSS, Javascript, and jQuery.
+
+Developed with HTML, CSS, Javascript, and jQuery.
 
 ## Demo
 
