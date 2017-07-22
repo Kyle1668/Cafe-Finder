@@ -34,6 +34,7 @@ function initPlacePanel(placeObj) {
 	var photo_reference = placeObj.photos[0].photo_reference;
 	var keyParem = "&key=AIzaSyC_KZyErDtZ42CuFscO2l5YseWaV8MCHrQ";
 	var address = placeObj.formatted_address.split(",");
+
 	placeObj.formatted_address = address[0] + address[1] + address[2];
 	console.log(address);
 	console.log(placeObj.formatted_address);
